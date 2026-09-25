@@ -189,3 +189,97 @@ FROM renamed
 [0m06:33:34.036213 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.2769527, "process_in_blocks": "0", "process_kernel_time": 0.94, "process_mem_max_rss": "461032", "process_out_blocks": "0", "process_user_time": 4.07}
 [0m06:33:34.036807 [debug] [Dummy-1   ]: Command `cli run` succeeded at 06:33:34.036566 after 3.28 seconds
 [0m06:33:34.037295 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 10:01:21.975438 | b5819a20-155a-456d-8ac3-e93c9acea2a1 ==============================
+[0m10:01:21.975438 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m10:01:21.976338 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/tmp/dbt_effective_profiles_i2cm3jaa', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt ', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m10:01:22.253281 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m10:01:22.780620 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m10:01:23.001907 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m10:01:23.002772 [debug] [Dummy-1   ]: Partial parsing: added file: olist_dbt://models/staging/stg_order_items.sql
+[0m10:01:23.397708 [warn ] [Dummy-1   ]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.olist_dbt.marts
+[0m10:01:23.482450 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m10:01:23.484591 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m10:01:23.525491 [info ] [Dummy-1   ]: Found 2 models, 9 sources, 474 macros
+[0m10:01:23.527820 [info ] [Dummy-1   ]: 
+[0m10:01:23.528332 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m10:01:23.528754 [info ] [Dummy-1   ]: 
+[0m10:01:23.529460 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m10:01:23.531823 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMM_DB'
+[0m10:01:23.634790 [debug] [ThreadPool]: Using snowflake connection "list_ECOMM_DB"
+[0m10:01:23.635495 [debug] [ThreadPool]: On list_ECOMM_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "olist_dbt", "target_name": "dev", "connection_name": "list_ECOMM_DB"} */
+show terse schemas in database ECOMM_DB
+    limit 10000
+[0m10:01:23.636053 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:01:24.023276 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.387 seconds
+[0m10:01:24.031158 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ECOMM_DB, now list_ECOMM_DB_DBT_DEV)
+[0m10:01:24.044349 [debug] [ThreadPool]: Using snowflake connection "list_ECOMM_DB_DBT_DEV"
+[0m10:01:24.044921 [debug] [ThreadPool]: On list_ECOMM_DB_DBT_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "olist_dbt", "target_name": "dev", "connection_name": "list_ECOMM_DB_DBT_DEV"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m10:01:24.045374 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:01:24.396003 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.350 seconds
+[0m10:01:24.400657 [debug] [ThreadPool]: Using snowflake connection "list_ECOMM_DB_DBT_DEV"
+[0m10:01:24.401239 [debug] [ThreadPool]: On list_ECOMM_DB_DBT_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "olist_dbt", "target_name": "dev", "connection_name": "list_ECOMM_DB_DBT_DEV"} */
+show objects in ECOMM_DB.DBT_DEV
+    limit 10000
+    
+;
+[0m10:01:24.497169 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.095 seconds
+[0m10:01:24.499419 [debug] [ThreadPool]: Using snowflake connection "list_ECOMM_DB_DBT_DEV"
+[0m10:01:24.499981 [debug] [ThreadPool]: On list_ECOMM_DB_DBT_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "olist_dbt", "target_name": "dev", "connection_name": "list_ECOMM_DB_DBT_DEV"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m10:01:24.554761 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.054 seconds
+[0m10:01:24.567489 [debug] [Thread-2 (]: Began running node model.olist_dbt.stg_order_items
+[0m10:01:24.568320 [info ] [Thread-2 (]: 1 of 1 START sql view model DBT_DEV.stg_order_items ............................ [RUN]
+[0m10:01:24.569006 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_ECOMM_DB_DBT_DEV, now model.olist_dbt.stg_order_items)
+[0m10:01:24.569548 [debug] [Thread-2 (]: Began compiling node model.olist_dbt.stg_order_items
+[0m10:01:24.578224 [debug] [Thread-2 (]: Writing injected SQL for node "model.olist_dbt.stg_order_items"
+[0m10:01:24.579034 [debug] [Thread-2 (]: Began executing node model.olist_dbt.stg_order_items
+[0m10:01:24.617470 [debug] [Thread-2 (]: Writing runtime sql for node "model.olist_dbt.stg_order_items"
+[0m10:01:24.618926 [debug] [Thread-2 (]: Using snowflake connection "model.olist_dbt.stg_order_items"
+[0m10:01:24.619495 [debug] [Thread-2 (]: On model.olist_dbt.stg_order_items: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "olist_dbt", "target_name": "dev", "node_id": "model.olist_dbt.stg_order_items"} */
+create or replace   view ECOMM_DB.DBT_DEV.stg_order_items
+  
+   as (
+    WITH source_olist AS (
+    SELECT
+        *
+    FROM ECOMM_DB.RAW.OLIST_ORDER_ITEMS
+),
+renamed AS (
+    SELECT
+        "order_id" AS order_id,
+        "order_item_id" AS order_item_seq,
+        "product_id" AS product_id,
+        "seller_id" AS seller_id,
+        "shipping_limit_date" AS shipping_limit_at,
+        "price" AS price,
+        "freight_value" AS freight_value
+    FROM source_olist
+)
+SELECT
+    *
+FROM renamed
+  );
+[0m10:01:24.620046 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m10:01:25.161193 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.541 seconds
+[0m10:01:25.187877 [info ] [Thread-2 (]: 1 of 1 OK created sql view model DBT_DEV.stg_order_items ....................... [[32mSUCCESS 1[0m in 0.62s]
+[0m10:01:25.188710 [debug] [Thread-2 (]: Finished running node model.olist_dbt.stg_order_items
+[0m10:01:25.191611 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m10:01:25.192119 [debug] [Dummy-1   ]: Connection 'model.olist_dbt.stg_order_items' was properly closed.
+[0m10:01:25.192597 [info ] [Dummy-1   ]: 
+[0m10:01:25.193071 [info ] [Dummy-1   ]: Finished running 1 view model in 0 hours 0 minutes and 1.66 seconds (1.66s).
+[0m10:01:25.193858 [debug] [Dummy-1   ]: Command end result
+[0m10:01:25.215472 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m10:01:25.217418 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m10:01:25.223555 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m10:01:25.224062 [info ] [Dummy-1   ]: 
+[0m10:01:25.224683 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m10:01:25.225136 [info ] [Dummy-1   ]: 
+[0m10:01:25.225628 [info ] [Dummy-1   ]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m10:01:25.227465 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.326969, "process_in_blocks": "0", "process_kernel_time": 0.91, "process_mem_max_rss": "515748", "process_out_blocks": "0", "process_user_time": 4.24}
+[0m10:01:25.228120 [debug] [Dummy-1   ]: Command `cli run` succeeded at 10:01:25.227855 after 3.33 seconds
+[0m10:01:25.228645 [debug] [Dummy-1   ]: Flushing usage events
