@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: olist
+    database: ECOMM_DB
+    schema: RAW
+    tables:
+      - name: customers
+        identifier: OLIST_CUSTOMERS
+      - name: geolocation
+        identifier: OLIST_GEOLOCATION
+      - name: orders
+        identifier: OLIST_ORDERS
+      - name: order_items
+        identifier: OLIST_ORDER_ITEMS
+      - name: order_payments
+        identifier: OLIST_ORDER_PAYMENTS
+      - name: order_reviews
+        identifier: OLIST_ORDER_REVIEWS
+      - name: products
+        identifier: OLIST_PRODUCTS
+      - name: sellers
+        identifier: OLIST_SELLERS
+      - name: category_translation
+        identifier: PRODUCT_CATEGORY_TRANSLATION
