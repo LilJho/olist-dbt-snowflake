@@ -1,0 +1,12 @@
+olist_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: 'not_used'
+      user: 'not_used'
+      role: ACCOUNTADMIN
+      warehouse: COMPUTE_WH
+      database: ECOMM_DB
+      schema: DBT_DEV
+      threads: 4
