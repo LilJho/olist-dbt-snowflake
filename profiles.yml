@@ -5,7 +5,7 @@ olist_dbt:
       type: snowflake
       account: 'not_used'
       user: 'not_used'
-      role: ACCOUNTADMIN
+      role: TRANSFORMER
       warehouse: COMPUTE_WH
       database: ECOMM_DB
       schema: DBT_DEV
