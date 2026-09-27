@@ -377,3 +377,195 @@ FROM renamed
 [0m10:29:23.722651 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.521845, "process_in_blocks": "0", "process_kernel_time": 0.81, "process_mem_max_rss": "521352", "process_out_blocks": "0", "process_user_time": 4.27}
 [0m10:29:23.723297 [debug] [Dummy-1   ]: Command `cli run` succeeded at 10:29:23.723045 after 3.52 seconds
 [0m10:29:23.723802 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 01:01:44.440981 | 5ea6751c-6629-400c-b8ad-d929699f0913 ==============================
+[0m01:01:44.440981 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m01:01:44.441916 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'profiles_dir': '/tmp/dbt_effective_profiles_bht6pque', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt ', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m01:01:44.721142 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m01:01:45.267579 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m01:01:45.386903 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m01:01:46.700525 [warn ] [Dummy-1   ]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.olist_dbt.marts
+[0m01:01:46.787919 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m01:01:46.790064 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m01:01:46.831308 [info ] [Dummy-1   ]: Found 4 models, 9 sources, 474 macros
+[0m01:01:46.833588 [info ] [Dummy-1   ]: 
+[0m01:01:46.834243 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m01:01:46.834731 [info ] [Dummy-1   ]: 
+[0m01:01:46.835445 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m01:01:46.837685 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMM_DB'
+[0m01:01:46.924577 [debug] [ThreadPool]: Using snowflake connection "list_ECOMM_DB"
+[0m01:01:46.925170 [debug] [ThreadPool]: On list_ECOMM_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "olist_dbt", "target_name": "dev", "connection_name": "list_ECOMM_DB"} */
+show terse schemas in database ECOMM_DB
+    limit 10000
+[0m01:01:46.925648 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:01:47.588941 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.663 seconds
+[0m01:01:47.597247 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ECOMM_DB, now list_ECOMM_DB_DBT_DEV)
+[0m01:01:47.610552 [debug] [ThreadPool]: Using snowflake connection "list_ECOMM_DB_DBT_DEV"
+[0m01:01:47.611142 [debug] [ThreadPool]: On list_ECOMM_DB_DBT_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "olist_dbt", "target_name": "dev", "connection_name": "list_ECOMM_DB_DBT_DEV"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m01:01:47.611584 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:01:48.134670 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.523 seconds
+[0m01:01:48.139418 [debug] [ThreadPool]: Using snowflake connection "list_ECOMM_DB_DBT_DEV"
+[0m01:01:48.139996 [debug] [ThreadPool]: On list_ECOMM_DB_DBT_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "olist_dbt", "target_name": "dev", "connection_name": "list_ECOMM_DB_DBT_DEV"} */
+show objects in ECOMM_DB.DBT_DEV
+    limit 10000
+    
+;
+[0m01:01:48.280793 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.140 seconds
+[0m01:01:48.283189 [debug] [ThreadPool]: Using snowflake connection "list_ECOMM_DB_DBT_DEV"
+[0m01:01:48.283810 [debug] [ThreadPool]: On list_ECOMM_DB_DBT_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "olist_dbt", "target_name": "dev", "connection_name": "list_ECOMM_DB_DBT_DEV"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m01:01:48.349604 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.065 seconds
+[0m01:01:48.363131 [debug] [Thread-2 (]: Began running node model.olist_dbt.int_reviews_by_order
+[0m01:01:48.363993 [info ] [Thread-2 (]: 1 of 1 START sql view model DBT_DEV.int_reviews_by_order ....................... [RUN]
+[0m01:01:48.364710 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_ECOMM_DB_DBT_DEV, now model.olist_dbt.int_reviews_by_order)
+[0m01:01:48.365217 [debug] [Thread-2 (]: Began compiling node model.olist_dbt.int_reviews_by_order
+[0m01:01:48.375309 [debug] [Thread-2 (]: Writing injected SQL for node "model.olist_dbt.int_reviews_by_order"
+[0m01:01:48.376236 [debug] [Thread-2 (]: Began executing node model.olist_dbt.int_reviews_by_order
+[0m01:01:48.418781 [debug] [Thread-2 (]: Writing runtime sql for node "model.olist_dbt.int_reviews_by_order"
+[0m01:01:48.420197 [debug] [Thread-2 (]: Using snowflake connection "model.olist_dbt.int_reviews_by_order"
+[0m01:01:48.420831 [debug] [Thread-2 (]: On model.olist_dbt.int_reviews_by_order: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "olist_dbt", "target_name": "dev", "node_id": "model.olist_dbt.int_reviews_by_order"} */
+create or replace   view ECOMM_DB.DBT_DEV.int_reviews_by_order
+  
+   as (
+    SELECT
+    order_id,
+    SUM(review_score) AS total_review_score,
+    COUNT(review_id) AS total_review_count
+FROM ECOMM_DB.DBT_DEV.stg_order_reviews
+GROUP BY order_id
+  );
+[0m01:01:48.421368 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m01:01:49.130840 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.709 seconds
+[0m01:01:49.157925 [info ] [Thread-2 (]: 1 of 1 OK created sql view model DBT_DEV.int_reviews_by_order .................. [[32mSUCCESS 1[0m in 0.79s]
+[0m01:01:49.158883 [debug] [Thread-2 (]: Finished running node model.olist_dbt.int_reviews_by_order
+[0m01:01:49.161647 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m01:01:49.162218 [debug] [Dummy-1   ]: Connection 'model.olist_dbt.int_reviews_by_order' was properly closed.
+[0m01:01:49.162696 [info ] [Dummy-1   ]: 
+[0m01:01:49.163232 [info ] [Dummy-1   ]: Finished running 1 view model in 0 hours 0 minutes and 2.33 seconds (2.33s).
+[0m01:01:49.164086 [debug] [Dummy-1   ]: Command end result
+[0m01:01:49.187038 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m01:01:49.189195 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m01:01:49.195400 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m01:01:49.195965 [info ] [Dummy-1   ]: 
+[0m01:01:49.196636 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m01:01:49.197133 [info ] [Dummy-1   ]: 
+[0m01:01:49.197601 [info ] [Dummy-1   ]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m01:01:49.199423 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.83367, "process_in_blocks": "0", "process_kernel_time": 0.86, "process_mem_max_rss": "520440", "process_out_blocks": "0", "process_user_time": 5.26}
+[0m01:01:49.200114 [debug] [Dummy-1   ]: Command `cli run` succeeded at 01:01:49.199833 after 4.83 seconds
+[0m01:01:49.200695 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 08:31:17.288514 | ddc711b4-3605-465d-b6de-f8ed48183c31 ==============================
+[0m08:31:17.288514 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m08:31:17.289358 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt_effective_profiles_rthe0d81', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt ', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m08:31:17.553221 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m08:31:18.096319 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m08:31:18.304353 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m08:31:18.305115 [debug] [Dummy-1   ]: Partial parsing: added file: olist_dbt://models/marts/fct_seller_performance.sql
+[0m08:31:18.601377 [error] [Dummy-1   ]: Encountered an error:
+Compilation Error in model fct_seller_performance (models/marts/fct_seller_performance.sql)
+  The name argument to ref() must be a string, got <class 'dbt_common.clients.jinja.create_undefined.<locals>.Undefined'>
+[0m08:31:18.602949 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.3866149, "process_in_blocks": "0", "process_kernel_time": 0.65, "process_mem_max_rss": "413384", "process_out_blocks": "0", "process_user_time": 3.78}
+[0m08:31:18.603616 [debug] [Dummy-1   ]: Command `cli run` failed at 08:31:18.603313 after 1.39 seconds
+[0m08:31:18.604187 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 08:31:49.942135 | 22e80951-1657-446a-b389-2a2b294fafe2 ==============================
+[0m08:31:49.942135 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m08:31:49.942916 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'profiles_dir': '/tmp/dbt_effective_profiles_pg2rozk4', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt ', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m08:31:50.210732 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m08:31:50.751054 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m08:31:50.955955 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m08:31:50.956705 [debug] [Dummy-1   ]: Partial parsing: added file: olist_dbt://models/marts/fct_seller_performance.sql
+[0m08:31:51.417369 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m08:31:51.419236 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m08:31:51.460510 [info ] [Dummy-1   ]: Found 5 models, 9 sources, 474 macros
+[0m08:31:51.462626 [info ] [Dummy-1   ]: 
+[0m08:31:51.463141 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m08:31:51.463660 [info ] [Dummy-1   ]: 
+[0m08:31:51.464392 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m08:31:51.466594 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_ECOMM_DB'
+[0m08:31:51.565437 [debug] [ThreadPool]: Using snowflake connection "list_ECOMM_DB"
+[0m08:31:51.566033 [debug] [ThreadPool]: On list_ECOMM_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "olist_dbt", "target_name": "dev", "connection_name": "list_ECOMM_DB"} */
+show terse schemas in database ECOMM_DB
+    limit 10000
+[0m08:31:51.566530 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:31:51.996894 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.430 seconds
+[0m08:31:52.004466 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ECOMM_DB, now list_ECOMM_DB_DBT_DEV)
+[0m08:31:52.016553 [debug] [ThreadPool]: Using snowflake connection "list_ECOMM_DB_DBT_DEV"
+[0m08:31:52.017014 [debug] [ThreadPool]: On list_ECOMM_DB_DBT_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "olist_dbt", "target_name": "dev", "connection_name": "list_ECOMM_DB_DBT_DEV"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m08:31:52.017420 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:31:52.404809 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.387 seconds
+[0m08:31:52.409223 [debug] [ThreadPool]: Using snowflake connection "list_ECOMM_DB_DBT_DEV"
+[0m08:31:52.409732 [debug] [ThreadPool]: On list_ECOMM_DB_DBT_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "olist_dbt", "target_name": "dev", "connection_name": "list_ECOMM_DB_DBT_DEV"} */
+show objects in ECOMM_DB.DBT_DEV
+    limit 10000
+    
+;
+[0m08:31:52.515058 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.105 seconds
+[0m08:31:52.517134 [debug] [ThreadPool]: Using snowflake connection "list_ECOMM_DB_DBT_DEV"
+[0m08:31:52.517595 [debug] [ThreadPool]: On list_ECOMM_DB_DBT_DEV: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "olist_dbt", "target_name": "dev", "connection_name": "list_ECOMM_DB_DBT_DEV"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m08:31:52.581762 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.063 seconds
+[0m08:31:52.594039 [debug] [Thread-2 (]: Began running node model.olist_dbt.fct_seller_performance
+[0m08:31:52.594727 [info ] [Thread-2 (]: 1 of 1 START sql table model DBT_DEV.fct_seller_performance .................... [RUN]
+[0m08:31:52.595339 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_ECOMM_DB_DBT_DEV, now model.olist_dbt.fct_seller_performance)
+[0m08:31:52.595896 [debug] [Thread-2 (]: Began compiling node model.olist_dbt.fct_seller_performance
+[0m08:31:52.604539 [debug] [Thread-2 (]: Writing injected SQL for node "model.olist_dbt.fct_seller_performance"
+[0m08:31:52.605239 [debug] [Thread-2 (]: Began executing node model.olist_dbt.fct_seller_performance
+[0m08:31:52.637611 [debug] [Thread-2 (]: Writing runtime sql for node "model.olist_dbt.fct_seller_performance"
+[0m08:31:52.639330 [debug] [Thread-2 (]: Using snowflake connection "model.olist_dbt.fct_seller_performance"
+[0m08:31:52.639946 [debug] [Thread-2 (]: On model.olist_dbt.fct_seller_performance: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "olist_dbt", "target_name": "dev", "node_id": "model.olist_dbt.fct_seller_performance"} */
+create or replace transient table ECOMM_DB.DBT_DEV.fct_seller_performance
+         as
+        (WITH SellerOrders AS (
+    SELECT
+        seller_id,
+        order_id,
+        SUM(price) as order_revenue
+    FROM ECOMM_DB.DBT_DEV.stg_order_items
+    GROUP BY seller_id, order_id
+), Combined AS (
+    SELECT
+        so.seller_id,
+        so.order_id,
+        so.order_revenue,
+        iro.total_review_score,
+        iro.total_review_count
+    FROM SellerOrders so
+    LEFT JOIN ECOMM_DB.DBT_DEV.int_reviews_by_order iro ON so.order_id = iro.order_id
+)
+SELECT
+    seller_id,
+    COUNT(order_id) AS total_orders,
+    SUM(order_revenue) AS total_revenue,
+    COALESCE(SUM(total_review_score), 0) AS total_review_score,
+    COALESCE(SUM(total_review_count), 0) AS total_review_count,
+    ROUND(SUM(total_review_score) / NULLIF(SUM(total_review_count), 0), 2) AS avg_review_score
+FROM Combined
+GROUP BY seller_id
+        );
+[0m08:31:52.640433 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m08:31:54.230319 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.590 seconds
+[0m08:31:54.253172 [info ] [Thread-2 (]: 1 of 1 OK created sql table model DBT_DEV.fct_seller_performance ............... [[32mSUCCESS 1[0m in 1.66s]
+[0m08:31:54.253936 [debug] [Thread-2 (]: Finished running node model.olist_dbt.fct_seller_performance
+[0m08:31:54.256773 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m08:31:54.257289 [debug] [Dummy-1   ]: Connection 'model.olist_dbt.fct_seller_performance' was properly closed.
+[0m08:31:54.257763 [info ] [Dummy-1   ]: 
+[0m08:31:54.258236 [info ] [Dummy-1   ]: Finished running 1 table model in 0 hours 0 minutes and 2.79 seconds (2.79s).
+[0m08:31:54.258957 [debug] [Dummy-1   ]: Command end result
+[0m08:31:54.280233 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m08:31:54.281834 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m08:31:54.287408 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m08:31:54.287933 [info ] [Dummy-1   ]: 
+[0m08:31:54.288504 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m08:31:54.288926 [info ] [Dummy-1   ]: 
+[0m08:31:54.289374 [info ] [Dummy-1   ]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m08:31:54.290996 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.4205847, "process_in_blocks": "0", "process_kernel_time": 0.6, "process_mem_max_rss": "510868", "process_out_blocks": "0", "process_user_time": 4.34}
+[0m08:31:54.291619 [debug] [Dummy-1   ]: Command `cli run` succeeded at 08:31:54.291339 after 4.42 seconds
+[0m08:31:54.292155 [debug] [Dummy-1   ]: Flushing usage events
