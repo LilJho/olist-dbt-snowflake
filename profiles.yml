@@ -10,3 +10,12 @@ olist_dbt:
       database: ECOMM_DB
       schema: DBT_DEV
       threads: 4
+    prod:
+      type: snowflake
+      account: 'not_used'
+      user: 'not_used'
+      role: TRANSFORMER
+      warehouse: COMPUTE_WH
+      database: ECOMM_DB
+      schema: DBT_PROD
+      threads: 4
