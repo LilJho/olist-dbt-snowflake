@@ -11,3 +11,6 @@ models:
       +materialized: table
     intermediate:
       +materialized: view
+    +persist_docs:
+      relation: true
+      columns: true

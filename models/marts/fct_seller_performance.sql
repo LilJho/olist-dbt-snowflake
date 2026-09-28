@@ -1,4 +1,4 @@
-WITH SellerOrders AS (
+ECOMM_DB.DBT_DEVWITH SellerOrders AS (
     SELECT
         seller_id,
         order_id,

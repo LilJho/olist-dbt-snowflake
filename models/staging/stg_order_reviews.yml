@@ -2,13 +2,30 @@ version: 2
 
 models:
   - name: stg_order_reviews
+    description: >
+      One row per review per order. Neither review_id nor order_id is unique on
+      its own: some orders have several reviews, and some reviews are linked to
+      several orders. The grain is review_id + order_id. Aggregate to order level
+      (see int_reviews_by_order) before joining to items, to avoid fan-out.
     data_tests:
       - unique:
           column_name: "review_id || '-' || order_id"
     columns:
       - name: review_id
+        description: Review identifier. Can appear on more than one order.
         data_tests:
           - not_null
       - name: order_id
+        description: The order being reviewed. Can appear on more than one review.
         data_tests:
           - not_null
+      - name: review_score
+        description: Customer satisfaction score from 1 (worst) to 5 (best).
+      - name: review_comment_title
+        description: Optional title of the review comment. Mostly NULL.
+      - name: review_comment_message
+        description: Optional free-text review comment. Mostly NULL.
+      - name: review_creation_at
+        description: When the review survey was sent. Always midnight, so effectively a date.
+      - name: review_answer_at
+        description: When the customer answered the review survey.
