@@ -1,8 +1,8 @@
-ECOMM_DB.DBT_DEVWITH SellerOrders AS (
+WITH SellerOrders AS (
     SELECT
         seller_id,
         order_id,
-        SUM(price) as order_revenue
+        SUM(price) AS order_revenue
     FROM {{ ref('stg_order_items') }}
     GROUP BY seller_id, order_id
 ), Combined AS (
