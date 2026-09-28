@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: >
+      One row per order. Cleaned mirror of RAW.OLIST_ORDERS: quoted lowercase
+      column names are renamed, and all timestamp columns use the _at suffix.
+      No rows are added or removed.
+    columns:
+      - name: order_id
+        description: Unique identifier for the order.
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: Identifier of the customer who placed the order.
+      - name: order_status
+        description: Current status of the order (e.g. delivered, shipped, canceled, invoiced).
+      - name: order_purchase_at
+        description: When the customer placed the order.
+      - name: order_approved_at
+        description: When the payment was approved.
+      - name: order_delivered_carrier_at
+        description: When the seller handed the order to the carrier. NULL if not yet shipped.
+      - name: order_delivered_customer_at
+        description: When the order was delivered to the customer. NULL if not yet delivered.
+      - name: order_estimated_delivery_at
+        description: Delivery date promised to the customer at purchase time.

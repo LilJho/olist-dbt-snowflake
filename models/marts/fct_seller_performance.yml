@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: fct_seller_performance
+    description: >
+      One row per seller, with revenue, order count, and review metrics across
+      all their orders. Items are first aggregated to one row per order per
+      seller, then joined to order-level reviews, so no row is double-counted.
+      Review totals are stored separately to keep them additive. Note that
+      reviews are given per order, not per seller: when an order contains items
+      from several sellers, each of those sellers receives that order's review.
+    columns:
+      - name: seller_id
+        description: Unique identifier for the seller.
+        data_tests:
+          - unique
+          - not_null
+      - name: total_orders
+        description: Number of orders containing at least one item from this seller.
+      - name: total_revenue
+        description: Sum of this seller's item prices. Excludes freight.
+      - name: total_review_score
+        description: Sum of review scores for this seller's orders. 0 if no reviews.
+      - name: total_review_count
+        description: Number of reviews for this seller's orders. 0 if no reviews.
+      - name: avg_review_score
+        description: total_review_score / total_review_count, rounded to 2 decimals. NULL if no reviews.

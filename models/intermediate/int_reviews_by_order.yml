@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: int_reviews_by_order
+    description: >
+      One row per order that has at least one review. Orders without reviews
+      are not included. Exists to bring reviews to order grain, so they can be
+      joined to order items without duplicating rows.
+    columns:
+      - name: order_id
+        description: The reviewed order.
+        data_tests:
+          - unique
+          - not_null
+      - name: total_review_score
+        description: Sum of all review scores for this order.
+      - name: total_review_count
+        description: Number of reviews for this order. Usually 1, sometimes more.

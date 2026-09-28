@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_order_items
+    description: >
+      One row per item within an order. An order with several items has several
+      rows. The grain is order_id + order_item_seq; neither column is unique on
+      its own.
+    data_tests:
+      - unique:
+          column_name: "order_id || '-' || order_item_seq"
+    columns:
+      - name: order_id
+        description: The order this item belongs to. Repeats for multi-item orders.
+        data_tests:
+          - not_null
+      - name: order_item_seq
+        description: >
+          Position of the item within its order (1, 2, 3...). Not an ID; only
+          unique when combined with order_id. Renamed from the raw column
+          order_item_id to avoid that confusion.
+        data_tests:
+          - not_null
+      - name: product_id
+        description: The product sold in this item.
+      - name: seller_id
+        description: The seller who sold this item. One order can include items from several sellers.
+        data_tests:
+          - not_null
+      - name: shipping_limit_at
+        description: Deadline for the seller to hand this item to the carrier.
+      - name: price
+        description: Price of the item, excluding freight.
+      - name: freight_value
+        description: Freight cost charged for this item.
