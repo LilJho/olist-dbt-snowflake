@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_order_items
+    data_tests:
+      - unique:
+          column_name: "order_id || '-' || order_item_seq"
+    columns:
+      - name: order_id
+        data_tests:
+          - not_null
+      - name: order_item_seq
+        data_tests:
+          - not_null
+      - name: seller_id
+        data_tests:
+          - not_null

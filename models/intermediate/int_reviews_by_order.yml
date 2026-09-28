@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: int_reviews_by_order
+    columns:
+      - name: order_id
+        data_tests:
+          - unique
+          - not_null
