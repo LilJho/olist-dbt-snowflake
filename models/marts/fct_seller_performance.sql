@@ -1,18 +1,11 @@
-WITH SellerOrders AS (
-    SELECT
-        seller_id,
-        order_id,
-        SUM(price) AS order_revenue
-    FROM {{ ref('stg_order_items') }}
-    GROUP BY seller_id, order_id
-), Combined AS (
+WITH Combined AS (
     SELECT
         so.seller_id,
         so.order_id,
         so.order_revenue,
         iro.total_review_score,
         iro.total_review_count
-    FROM SellerOrders so
+    FROM {{ ref('fct_seller_orders') }} so
     LEFT JOIN {{ ref('int_reviews_by_order') }} iro ON so.order_id = iro.order_id
 )
 SELECT
